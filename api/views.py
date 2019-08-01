@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets,permissions
 from .serializers import PostSerializer
-from posts.models import Post
+from .models import Post
 
 # Create your views here.
 
