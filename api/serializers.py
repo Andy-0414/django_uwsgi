@@ -1,21 +1,25 @@
 from rest_framework import serializers
-from .models import Post
-from django.contrib.auth.models import User
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'email')
+from .models import Post,People
 
 
 class PostSerializer(serializers.ModelSerializer):
-    # user = UserSerializer(read_only=True)
-
     class Meta:
         model = Post
         fields = (
-            'id',
+            'imgName',
+            'title',
+            'link',
+            'created_at',
+        )
+        read_only_fields = ('created_at',)
+
+class PeopleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = People
+        fields = (
+            'imgName',
+            'name',
+            'subname',
             'title',
             'content',
             'created_at',
