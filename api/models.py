@@ -14,4 +14,5 @@ class People(models.Model):
     subname = models.CharField(max_length=144)
     title = models.CharField(max_length=144)
     content = models.TextField()
+    short_content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
